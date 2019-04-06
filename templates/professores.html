@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Professores</title>
+</head>
+<body>
+<table border="1" cellpadding="10">
+    <tr><td style="font-weight:bold;">Professor</td>
+    <td style="font-weight:bold;">Detalhar</td></tr>
+{% for p in professores %}
+
+    <tr><td>{{p[0]}}</td>
+    <td><a href="/exibirProfessor/{{p[1]}}">Clique Aqui</a></td></tr>
+    {% endfor %}
+</body>
+</html>

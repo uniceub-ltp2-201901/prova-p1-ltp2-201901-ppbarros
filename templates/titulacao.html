@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Titulação {{titulacao}}</title>
+</head>
+<body>
+{% if titulacao == '1' %}
+    <h1>Professores com Especialização</h1>
+{% elif titulacao == '2' %}
+    <h1>Professores com Mestrado</h1>
+{% elif titulacao == '3' %}
+    <h1>Professores com Doutorado</h1>
+{% endif %}
+<table border="1" cellpadding="10">
+    {% for p in data %}
+    <tr><td>{{p[0]}}</td>
+    <td><a href="/exibirProfessor/{{p[1]}}">Detalhar</a></td></tr>
+    {% endfor %}
+</table>
+
+
+
+</body>
+</html>
