@@ -34,6 +34,10 @@ def consultar_salario(id):
     cursor = mysql.get_db().cursor()
     return render_template('salario.html', professor=nome(cursor, id), carga=salario(cursor, id))
 
+@app.route('/consultarApenasComputacao')
+def computacao():
+    cursor = mysql.get_db().cursor()
+    return render_template('computacao.html', prof=cic(cursor))
 
 
 if __name__ == '__main__':

@@ -22,7 +22,10 @@ def titulacao(cursor, tit):
     cursor.close()
     return professores
 
-#def cic(cursor):
+def cic(cursor):
+    cursor.execute('select distinct professor.nome from professor, disciplina where disciplina.curso = "Ciência da Computação" and professor.idprofessor = disciplina.idprofessor')
+    professor = cursor.fetchall()
+    return professor
 
 def salario(cursor, id):
     cursor.execute(f'select sum(cargahoraria) from disciplina where idprofessor = {id}')
